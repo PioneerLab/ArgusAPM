@@ -44,8 +44,9 @@ dependencies {
     if (ArgusAPM_Release) {
         provided project(':argus-apm-main')
     } else {
-        releaseProvided project(path: ':argus-apm-main', configuration: 'release')
-        debugProvided project(path: ':argus-apm-main', configuration: 'debug')
+//        releaseProvided project(path: ':argus-apm-main', configuration: 'release')
+//        debugProvided project(path: ':argus-apm-main', configuration: 'debug')
+        provided project(':argus-apm-main')
     }
 }
 

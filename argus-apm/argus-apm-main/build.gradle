@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 10
+        minSdkVersion 15
         targetSdkVersion 27
 
         // 改参数一般用来调试数据库，数据库生成在sdcard方便调试
@@ -29,7 +29,7 @@ android {
         debug {
             minifyEnabled false
             zipAlignEnabled false
-            shrinkResources false
+//            shrinkResources false
             consumerProguardFiles 'argus-apm-main.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'argus-apm-main.pro'
         }
@@ -37,7 +37,7 @@ android {
         release {
             minifyEnabled true
             zipAlignEnabled true
-            shrinkResources true
+//            shrinkResources true
             consumerProguardFiles 'argus-apm-main.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'argus-apm-main.pro'
         }
@@ -61,8 +61,9 @@ dependencies {
     provided 'org.aspectj:aspectjtools:1.8.9'
     //下面的两行是方便在Debug调试时使用，发布Release包时需要将下面的两行注释掉，并执行copyNewDependentLibs任务
     if (!ArgusAPM_Release) {
-        releaseCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'release')
-        debugCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'debug')
+//        releaseCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'release')
+//        debugCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'debug')
+        compile project(':argus-apm-cloud-dummy-impl')
     }
 }
 

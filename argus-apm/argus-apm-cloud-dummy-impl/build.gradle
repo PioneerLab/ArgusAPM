@@ -33,7 +33,8 @@ dependencies {
     if (ArgusAPM_Release) {
         compile project(':argus-apm-cloud')
     } else {
-        releaseCompile project(path: ':argus-apm-cloud', configuration: 'release')
-        debugCompile project(path: ':argus-apm-cloud', configuration: 'debug')
+//        releaseCompile project(path: ':argus-apm-cloud', configuration: 'release')
+//        debugCompile project(path: ':argus-apm-cloud', configuration: 'debug')
+        compile project(':argus-apm-cloud')
     }
 }
